@@ -9,6 +9,7 @@
 (ns datomic.samples.mbrainz
   (:require [clojure.pprint :refer (pprint)]
             [datomic.api :as d]
+            [clojure.pprint :as pp]
             [datomic.samples.mbrainz.rules :refer (rules)]))
 
 ;; this file is intended for evaluation, form-by-form, at the REPL
@@ -49,6 +50,8 @@
        [?r :release/year  ?year]]
      db
      "John Lennon")
+
+(sort *1)
 
 (d/q '[:find ?title ?album ?year
        :in $ ?artist-name
